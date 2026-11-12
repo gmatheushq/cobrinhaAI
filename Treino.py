@@ -193,9 +193,23 @@ print("Arquivo:", CAMINHO_MODELO)
 print(f"Tamanho: {tamanho_mb:.2f} MB")
 
 # ==================================================
+# ATUALIZA A PAGINA arvore.html COM O MODELO RECEM-TREINADO
+# (o modelo ja foi salvo; se a exportacao falhar, nada se perde)
+# ==================================================
+
+try:
+    import exportar_arvore
+
+    exportar_arvore.main()
+
+except Exception as erro:
+    print("\nNao consegui atualizar o arvore.html:", erro)
+
+# ==================================================
 # VISUALIZACAO DA ARVORE DE DECISAO
 # (o modelo ja foi salvo; se a visualizacao falhar, nada se perde)
 # ==================================================
+
 
 try:
     from visualizar_arvore import mostrar_arvore
